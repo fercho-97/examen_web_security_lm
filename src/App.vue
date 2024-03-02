@@ -1,17 +1,34 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <!--  <img alt="Vue logo" src="./assets/logo.png"> -->
+<div>
+
+<NavBar :elementos="barranavegacion"/>
+   <router-view/>
+</div>
+  
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import NavBar from "./components/NavBar.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
+    NavBar,
+  },
+  data(){
+
+    return{
+
+      barranavegacion:[
+        {id:1, text:'Generar Token', ruta:'/generar'},
+        {id:2, text:'Guardar Estudiante', ruta:'/estudiante'},
+  
+      ],
+
+    }
   }
-}
+};
 </script>
 
 <style>
